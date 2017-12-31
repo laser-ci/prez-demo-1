@@ -1,0 +1,32 @@
+<%= form_with(model: wombat, local: true) do |form| %>
+  <% if wombat.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(wombat.errors.count, "error") %> prohibited this wombat from being saved:</h2>
+
+      <ul>
+      <% wombat.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title, id: :wombat_title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :body %>
+    <%= form.text_area :body, id: :wombat_body %>
+  </div>
+
+  <div class="field">
+    <%= form.label :published %>
+    <%= form.check_box :published, id: :wombat_published %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

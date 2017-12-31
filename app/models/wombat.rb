@@ -1,0 +1,2 @@
+class Wombat < ApplicationRecord
+end

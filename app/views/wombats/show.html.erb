@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @wombat.title %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @wombat.body %>
+</p>
+
+<p>
+  <strong>Published:</strong>
+  <%= @wombat.published %>
+</p>
+
+<%= link_to 'Edit', edit_wombat_path(@wombat) %> |
+<%= link_to 'Back', wombats_path %>

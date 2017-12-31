@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Wombats</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Body</th>
+      <th>Published</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @wombats.each do |wombat| %>
+      <tr>
+        <td><%= wombat.title %></td>
+        <td><%= wombat.body %></td>
+        <td><%= wombat.published %></td>
+        <td><%= link_to 'Show', wombat %></td>
+        <td><%= link_to 'Edit', edit_wombat_path(wombat) %></td>
+        <td><%= link_to 'Destroy', wombat, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Wombat', new_wombat_path %>
